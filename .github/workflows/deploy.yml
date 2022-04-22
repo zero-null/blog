@@ -8,7 +8,7 @@ jobs:
   # Deploy to Vercel
   deploy:
     name: 'Deploy to Vercel'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
       - name: Call the deployment hook
