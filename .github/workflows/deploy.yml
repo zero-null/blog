@@ -1,0 +1,17 @@
+name: 'Emanates Deploy'
+
+on:
+  issues:
+    types: [opened, edited, deleted]
+
+jobs:
+  # Deploy to Vercel
+  deploy:
+    name: 'Deploy to Vercel'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call the deployment hook
+        uses: wei/curl@master
+        with:
+          args: -X POST ${{ secrets.VERCEL_HOOK_URL }}
